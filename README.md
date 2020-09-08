@@ -1,2 +1,2 @@
-# Practica5_sa
-Repositorio para la practica 5 del laboratoria de sofware avanzado
+# PRACTICA 5
+INCIO DE LA PRACTICA DE DEVOPS PARA EL LABORTORIA DE SOFTWARE AVANZADO
