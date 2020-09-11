@@ -74,7 +74,6 @@ async function llamar(ui, p) {
     var re = await axios
       .post(ui, p, { headers: { "content-type": "application/json" } })
       .then(function (response) {
- 
         resul = response.data;
         return response.data;
       })
