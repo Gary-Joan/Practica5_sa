@@ -5,17 +5,15 @@ const path = require("path");
 const bodyparser = require("body-parser");
 const router = express.Router();
 const PORT = 3010;
-var indexRouter = require("./routes/index");
+const indexRouter = require("./routes/index");
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
+app.use("/", indexRouter);
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/views/index.html"));
-});
 //manejadores de pedido simples arrays
 let listaPedidos = new Array();
 let listaPedidosRepartidor = new Array();
@@ -88,8 +86,10 @@ async function llamar(ui, p) {
   }
 }
 
-app.use("/", indexRouter);
+
 
 app.listen(PORT, () => {
   console.log(`Restaurante escuchando en puerto: ${PORT}`);
 });
+
+module.exports = app;

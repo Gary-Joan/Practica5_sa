@@ -13,9 +13,6 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 
-app.use(express.static(path.join(__dirname, "public")));
-app.set("views", path.join(__dirname, "views"));
-
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/views/index.html"));
 });
@@ -107,3 +104,5 @@ async function llamar(ui, p) {
 app.listen(PORT, () => {
   console.log(`ESB escuchando en el puerto: ${PORT}`);
 });
+
+module.exports = app;
